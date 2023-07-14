@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<style>
+    .naslov {
+        color: white;
+        text-align: center;
+    }
+
+    .center {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    .newsflash {
+        padding: 5px;
+    }
+
+    .grid-container {
+        margin: auto;
+        padding: 1rem 1rem;
+        max-width: 500px;
+
+    }
+
+    .grid-item {
+        display: inline-block;
+        padding: 1rem 1rem;
+        vertical-align: middle;
+    }
+
+    select {
+        width: min-content;
+        padding: 12px 20px;
+        display: block;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+
+    <div class="container pb-4">
+
+        <div class="center">
+            <div class="center">
+                <select id="select1">
+                    <option value="1">Школарина - суфинансирајући студенти </option>
+                    <option value="2">Школарина - самофинансирајући студенти </option>
+                    <option value="3">Пријемни испит</option>
+                    <option value="4">Упис семестра</option>
+                    <option value="5">Уписни материjал (Само за студенте који први пут уписују први циклус студија)
+                    </option>
+                    <option value="6">Полагање испита</option>
+                    <option value="7">Наставни план и програм</option>
+                    <option value="8">Обнова године</option>
+                    <option value="9">Штампање дипломе</option>
+                    <option value="10">Дупликат индекса</option>
+                    <option value="11">Препис оцјена (увјерење)</option>
+                    <option value="12">Испис</option>
+                    <option value="13">Уплата за препис и признавање испита на други студијски програм Универзитета у
+                        Бањој
+                        Луци
+                    </option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="grid-container">
+
+            <div class="row-fluid projekat">
+                <div class="grid-item">
+                    <p><strong>Прималац:</strong>
+                        <inline> Рачун посебних намјена за институције високог образовања</inline>
+                    </p>
+                    <p><strong>Сврха уплате:</strong>
+                        <inline> школарина</inline>
+                    </p>
+                    <p><strong>Врста прихода:</strong>
+                        <inline> 722512</inline>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p><strong>Општина:</strong>
+                        <inline>002</inline>
+                    </p>
+                    <p><strong>Буџетска организација:</strong>
+                        <inline> 1250005</inline>
+                    </p>
+                    <p><strong>Позив на број:</strong>
+                        <inline> 0000000222</inline>
+                    </p>
+                    <p><strong>Износ:</strong>
+                        <inline> 440.00 КМ&nbsp;</inline>
+                    </p>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary d-block my-2 px-5" onclick="window.location = '/confirm-payment'">Send Payment</button>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+
+    {% endblock %}

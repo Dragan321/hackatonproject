@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Sign Up - noque.com</title>
+    <link rel="shortcut icon" type="image/jpg" href="/static/img/icons/logo.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <style>
+        :root {
+            --primary-color: #feaa00;
+            --secondary-color: #3f4739;
+            --body-background: #e8e9eb;
+            --color-dark: #181818;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--body-background);
+            height: 100vh;
+            color: #12161F;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 2000px !important;
+        }
+
+        .bgc-secondary {
+            background-color: var(--secondary-color) !important;
+            background: linear-gradient(180deg, var(--secondary-color) 50%, #3f4739 100%);
+        }
+
+        #logo {
+            max-width: 200px;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 33pt;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+        }
+
+        #alreadyHaveAccount {
+            font-size: 15pt;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+        }
+
+        #login-btn {
+            border: 1px solid #12161F;
+            border-radius: 30px;
+            width: 135px;
+            height: 60px;
+            font-size: 18pt;
+        }
+
+        .signup {
+            line-height: 80px;
+            font-size: 35pt;
+        }
+
+        .form-control {
+            background-color: var(--body-background);
+            border: none;
+        }
+
+        #sign-up-btn {
+            border: 1px solid #12161F;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            font-size: 15pt;
+        }
+
+        .divider:after,
+        .divider:before {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+
+        input[type=checkbox] {
+            accent-color: rgba(255, 255, 255, 0);
+        }
+
+        .social-icons {
+            max-width: 250px;
+        }
+
+
+        .bg-primary{
+            background-color: var(--primary-color) !important;
+        }
+
+        .social-icons div svg {
+            height: 45px;
+            width: 45px;
+            border-radius: 100%;
+            border: 1px solid rgba(18, 22, 31, 0.5);
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .social-icons div svg:hover {
+            background-color: var(--body-background);
+        }
+
+        .form-check-input {
+            mix-blend-mode: normal;
+            border: 2px solid rgba(18, 22, 31, 0.5);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
+        }
+
+        #remember-me {
+            width: 18px;
+            height: 18px;
+            transform: translateY(20%);
+        }
+
+        .inputContainer {
+            position: relative;
+        }
+
+        .remeberMeDiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .inputContainer .svg-icon {
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+        }
+
+        .inputContainer .form-control {
+            padding-left: 34px !important;
+        }
+
+        .modal-dialog {
+            max-width: none;
+        }
+
+        .inputContainer .svg-icon {
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+        }
+
+        .inputContainer .form-control {
+            padding-left: 34px !important;
+        }
+
+        form {
+            width: 60%;
+        }
+
+        @media screen and (max-width: 800px) {
+            form {
+                max-width: unset;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</body>
+
+</html>

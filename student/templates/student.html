@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<style>
+
+</style>
+
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h1>Welcome, Students!</h1>
+      <p>Our platform makes it easy for you to manage your college finances and apply for your first semester. Here are
+        some of the main functionalities:</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-3">
+      <a href="/send-payment" class="btn btn-primary btn-lg btn-block" style="border-radius: 2em;">Make a Payment</a>
+    </div>
+    <div class="col-md-3">
+      <a href="/student/apply/first-form" class="btn btn-basic btn-lg btn-block" style="border-radius: 2em; border: 1px solid black;" >Apply for First Semester</a>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 text-center">
+      <p>Our platform provides a simple and secure way for you to pay for your college expenses, including tuition, room
+        and board, and other fees. You can also apply for your first semester through our platform, saving you time and
+        hassle.</p>
+      <p>By logging in to your account, you can easily view your account balance, make payments, and keep track of your
+        financial transactions. Our platform also provides access to important college resources and information,
+        including class schedules, campus events, and academic advising.</p>
+      <p>We are committed to providing the best possible service to our students. If you have any questions or concerns,
+        please do not hesitate to contact us. We are here to help you succeed!</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 text-center">
+      <h2>Need Help?</h2>
+      <p>Check out these pages for step-by-step instructions:</p>
+      <ul class="list-unstyled">
+        <li><a href="#">How to Make a Payment</a></li>
+        <li><a href="#">How to Apply for First Semester</a></li>
+        <li><a href="#">How to View Your Account Balance</a></li>
+        <li><a href="#">How to Access College Resources</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+
+
+{% endblock %}

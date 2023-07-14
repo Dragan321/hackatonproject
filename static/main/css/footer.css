@@ -1,0 +1,22 @@
+.footer .sub-links {
+  color: #777;
+}
+
+.footer {
+  padding: 7rem 0;
+  background: var(--color-dark);
+  color: #777;
+}
+
+.footer-site-logo {
+  color: white;
+  font-size: 26px;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.footer h3 {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+}

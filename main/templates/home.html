@@ -1,0 +1,164 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<style>
+  #homeProfileImage {
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+  }
+
+  #edit-user-data {
+    border: 1px solid black;
+  }
+
+  .action-button-container button {
+    font-size: 15pt;
+    font-weight: 600;
+  }
+
+  .bank-icons {
+    height: 45px;
+  }
+
+  .user-info-item {
+    justify-content: space-between;
+    max-width: 300px;
+    margin: auto;
+  }
+
+  .user-info-item p {
+    color: var(--color-gray);
+  }
+</style>
+<script>
+  function editUserData() {
+    document.getElementById("editInfo").style.display = "block";
+    document.getElementById("userInfo").style.display = "none";
+  }
+
+</script>
+<div class="container" style="max-width: 2000px">
+  <div class="row">
+    <div class="col-md-4 p-0 py-1 text-center">
+      <div class="card pt-4 border-0 shadow-sm rounded-0 w-100 h-100 userInfoSection">
+        <div class="profile-image-container">
+          <img src="/media/student/profile_images/005.jpg" id="homeProfileImage" class="rounded-circle" loading="lazy"
+            style="object-fit: cover;" />
+          <br />
+          <a href="">change</a>
+        </div>
+        <br />
+        <h1 class="bold">0,00 KM</h1>
+
+
+        <div class="userInfo py-4" id="userInfo">
+
+          <div class="d-flex user-info-item py-1">
+            <p>Index: </p>
+            <p>{{ user.student_index }}</p>
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>Full Name: </p>
+            <p>{{ user.first_name }} {{ user.last_name }}</p>
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>Collage:</p>
+            <p>{{ user.collage }}</p>
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>Country:</p>
+            <p>Bosnia and Herzegovina</p>
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>City:</p>
+            <p>Istocno Sarajevo</p>
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>Address:</p>
+            <p>Karadjordjeva 6V</p>
+          </div>
+
+          <div class="py-2">
+            <button id="edit-user-data" class="btn btn-basic"
+              onclick="window.location = '/student/account-settings'">Edit</button>
+          </div>
+        </div>
+
+
+        <div id="editInfo" class="userInfo py-4" style="display: none">
+          <div class="d-flex user-info-item py-1">
+            <p>Index:</p>
+            <input type="text" id="p1Edit" />
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>Full Name:</p>
+            <input type="text" id="p2Edit" />
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>Collage:</p>
+            <input type="text" id="p3Edit" />
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>Country:</p>
+            <input type="text" id="p4Edit" />
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>City:</p>
+            <input type="text" id="p5Edit" />
+          </div>
+
+          <div class="d-flex user-info-item py-1">
+            <p>Address:</p>
+            <input type="text" id="p6Edit" />
+          </div>
+        </div>
+
+        <div id="editInfoButton" class="py-2" style="display: none">
+          <button id="edit-user-data" onclick="saveChanges()" class="btn btn-basic">
+            Save
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-8 d-flex flex-column py-4 align-items-center">
+      <div class="bank-icon-container d-flex mb-5">
+        <div class="p-4 mx-2 text-center bg-gray-light" style="cursor: pointer"
+          onclick="window.location = '/student/connect-bank'">
+          <img class="bank-icons" src="/static/main/img/bank.svg" alt="" />
+          <br />
+          <span>Connect Bank</span>
+        </div>
+        <div class="p-4 mx-2 text-center bg-gray-light" style="cursor: pointer"
+          onclick="window.location = '/student/connect-credit-card'">
+          <img class="bank-icons" src="/static/main/img/credit-card.png" alt="" />
+          <br />
+          <span>Connect Card</span>
+        </div>
+      </div>
+
+      <div class="action-button-container w-100 mt-4">
+        <button class="btn btn-primary w-100 bg-primary my-2 p-2" id="send-payment-button"
+          onclick="window.location = '/send-payment'">
+          Send Payment
+        </button>
+        <button class="btn btn-basic w-100 my-2 p-2" id="applyToCollage" onclick="window.location = '/payment/history'">
+          Payment History
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

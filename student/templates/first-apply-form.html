@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+
+    <div class="text-center w-100 m-auto" style="max-width: 1000px;">
+        <h2 class="my-4">PRIJAVNI SEMESTRALNI LIST</h2>
+
+
+        <div class="row">
+
+            <div class="col-md-6 py-4">
+
+                <label for="faculty">Univerzitet u Banjoj Luci - Fakultet:</label><br>
+                <input type="text" class="form-control w-100" id="faculty" name="faculty"><br>
+
+
+                <label for="student_id">Broj upisnice (indeksa):</label><br>
+                <input type="text" class="form-control w-100" id="student_id" name="student_id"><br>
+
+                <label for="student_type">Student:</label><br>
+                <input type="text" class="form-control w-100" id="student_type" name="student_type"><br>
+
+
+                <label for="semester_year">Godine:</label><br>
+                <input type="text" class="form-control w-100" id="semester_year" name="semester_year"><br>
+
+                <label for="birth_date">Dan, mjesec i godina rođenja:</label><br>
+                <input type="date" class="form-control w-100" id="date" name="date"><br>
+
+                <label for="birth_place">Mjesto rođenja:</label><br>
+                <input type="text" class="form-control w-100" id="birth_place" name="birth_place"><br>
+
+                <label for="residence_town">Opština:</label><br>
+                <input type="text" class="form-control w-100" id="residence_town" name="residence_town"><br>
+
+                <label>
+                    Država: <br>
+                </label>
+                <input type="text" class="form-control w-100" name="drzava">
+
+                <br>
+
+                <label for="citizenship">Državljanstvo:</label><br>
+                <input type="text" class="form-control w-100" id="citizenship" name="citizenship"><br>
+
+
+                <label for="semester_year">Semestar:</label><br>
+                <select class="form-control form-select" name="fakulteti" id="fakulteti">
+                    <option value="1">Semestar 1</option>
+                    <option value="2">Semestar 2</option>
+                    <option value="3">Semestar 3</option>
+                    <option value="4">Semestar 4</option>
+                    <option value="5">Semestar 5</option>
+                    <option value="6">Semestar 6</option>
+                    <option value="7">Semestar 7</option>
+                    <option value="8">Semestar 8</option>
+                </select><br>
+
+
+                <label>
+                    Upisao/la se kao: <br>
+                    <input type="radio" name="status" value="redovni"> Redovni
+                    <input type="radio" name="status" value="vanredni"> Vanredni
+                </label><br>
+
+
+            </div>
+
+            <div class="col-md-6 py-4">
+
+
+                <label for="parent_name">Prezime i ime roditela:</label><br>
+                <input type="text" class="form-control w-100" id="parent_name" name="parent_name"><br>
+
+                <label for="living_with">Kod koga stanuje (kod porodice ili kao samac) za vrijeme studija:</label><br>
+                <input type="text" class="form-control w-100" id="living_with" name="living_with"><br>
+
+                <label for="study_address">Gdje stanuje za vrijeme studija: ulica, broj i opština:</label><br>
+                <input type="text" class="form-control w-100" id="study_address" name="study_address"><br>
+
+                <label for="residential_address">Stalno mjesto boravka studenta:</label><br>
+                <input type="text" class="form-control w-100" id="residential_address" name="residential_address"><br>
+
+                <label for="financing">Od čega se izdržava za vrijeme studija:</label><br>
+                <input type="text" class="form-control w-100" id="financing" name="financing"><br>
+
+                <label for="scholarship">Prima li stipendiju i od koga:</label><br>
+                <input type="text" class="form-control w-100" id="scholarship" name="scholarship"><br>
+
+                <label for="recognized_semesters">Koliko ima priznatih semestara:</label><br>
+                <input type="text" class="form-control w-100" id="recognized_semesters" name="recognized_semesters"><br>
+
+                <label>
+                    U Banjoj Luci, godine:
+                </label><br>
+                <input type="text" class="form-control w-100" name="akademska_godina">
+                <br>
+
+                <label>
+                    Svojeručni potpis studenta:
+                </label><br>
+                <input type="text" class="form-control w-100" name="potpis"> <br>
+
+                <label for="ethnicity">Narodnost:</label><br>
+                <input type="text" class="form-control w-100" id="ethnicity" name="ethnicity"><br>
+                <br>
+                <label>
+                    Bračno stanje:
+                    <input type="radio" name="bracno_stanje" value="neozenjen_neudata"> Neoženjen/Neudata
+                    <input type="radio" name="bracno_stanje" value="ozenjen_udata"> Oženjen/Udata
+                </label><br>
+                <br>
+
+            </div>
+
+        </div>
+
+        <div style="max-width: 400px;" class="pb-4 m-auto">
+            <input type="submit" class="btn btn-primary w-100 m-auto" value="Dalje"
+                onclick="window.location = '/student/apply/second-form'">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

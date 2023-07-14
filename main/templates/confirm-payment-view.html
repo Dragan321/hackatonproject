@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<script>
+    var selectedElement
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+    function prikaziStranicu(classGrupe) {
+        document.querySelectorAll('.grupe').forEach(element => {
+            if (element.classList.contains(classGrupe)) {
+                element.classList.remove('invisible');
+
+            }
+
+
+            else
+                element.classList.add('invisible');
+        })
+    }
+
+    function onSelectChange() {
+        let value = document.getElementById("select1")
+        document.querySelectorAll('.grid-container').forEach(element => {
+            if (element.children[0].innerText != value.options[value.selectedIndex].text)
+                element.classList.add('invisible')
+            else {
+                element.classList.remove('invisible');
+                selectedElement = element
+                document.getElementById('nazivprimaoca').value = element.children[1].children[0].children[0].children[1].innerText
+                document.getElementById('Iznos').value = element.children[1].children[1].children[3].children[1].innerText
+                document.getElementById('svrhaplacanja').value = element.children[1].children[0].children[1].children[1].innerText
+                document.getElementById('datumplacanja').value = formatDate(new Date())
+                document.getElementById('vrstauplate').value = element.children[1].children[0].children[2].children[1].innerText
+                document.getElementById('vrstaUplate3').innerText = "VRSTA UPLATE: " + element.children[1].children[0].children[2].children[1].innerText
+                document.getElementById('opstina').value = element.children[1].children[1].children[0].children[1].innerText
+                document.getElementById('opstina3').innerText = "OPSTINA: " + element.children[1].children[1].children[0].children[1].innerText
+                document.getElementById('budzorg').value = element.children[1].children[1].children[1].children[1].innerText
+                document.getElementById('budzOrg3').innerText = "BUDZETSKA ORGANIZACIJA:" + element.children[1].children[1].children[1].children[1].innerText
+                document.getElementById('pozivnabr').value = element.children[1].children[1].children[2].children[1].innerText
+                document.getElementById('pozivNaBroj3').innerText = "POZIV NA BROJ:" + element.children[1].children[1].children[2].children[1].innerText
+                document.getElementById('datumod').value = formatDate(new Date())
+                document.getElementById('datumdo').value = formatDate(new Date())
+                document.getElementById('datumPlacanja3').innerText = formatDate(new Date())
+                document.getElementById('ukupanIznos3').innerText = element.children[1].children[1].children[3].children[1].innerText
+                document.getElementById('imePrimaoca3').innerText = "IME PRIMAOCA:" + element.children[1].children[0].children[0].children[1].innerText
+            }
+        })
+    }
+</script>
+
+
+<style>
+    .naslov {
+        background-color: #26007d;
+        color: white;
+        text-align: center;
+
+
+    }
+
+    .center {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    .newsflash {
+        padding: 5px;
+        /* border: 1px solid #DFDFDF; */
+    }
+
+    .grid-container {
+        margin: auto;
+        padding: 1rem 1rem;
+        max-width: 500px;
+
+    }
+
+    .grid-item {
+        display: inline-block;
+        padding: 1rem 1rem;
+        vertical-align: middle;
+    }
+
+    select {
+        width: min-content;
+        padding: 12px 20px;
+        display: block;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+</style>
+
+
+
+
+<body onload="onSelectChange();prikaziStranicu('group1')">
+
+
+    <div class="container pb-4">
+
+        <div class="grid-container">
+
+            <div class="row-fluid projekat">
+
+                <div class="grid-item">
+
+                    <h1>
+                        Potvrdite transakciju
+                    </h1>
+                    <p>
+                        Nakon sto potvrdite plaćanje, transakcija će biti izvršena u sljedećem iznosu:
+                    </p>
+                    <p><strong>Износ:</strong>
+                        <inline> 440.00 КМ&nbsp;</inline>
+                    </p>
+                </div>
+            </div>
+            <button class="btn btn-primary d-block" onclick="window.location = '/payment-successful'">Confirm
+                Payment</button>
+
+        </div>
+
+
+
+    </div>
+    </div>
+
+
+    {% endblock %}

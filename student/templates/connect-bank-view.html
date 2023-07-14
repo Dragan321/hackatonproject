@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<style>
+
+</style>
+
+<div class="container">
+    <div class="py-2">
+        <img src="/static/main/img/bank.svg" class="m-auto d-block" style="max-height: 300px;" alt="">
+    </div>
+
+
+
+    <form class="py-4">
+        <div class="form-group">
+          <label for="card-number">Credit Card Number</label>
+          <input type="text" class="form-control" id="card-number" placeholder="Enter credit card number">
+        </div>
+        <div class="form-group">
+          <label for="expiry-date">Expiry Date</label>
+          <input type="text" class="form-control" id="expiry-date" placeholder="MM / YY">
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+        </div>
+        <button type="submit" class="btn btn-primary m-auto d-block">Connect</button>
+      </form>
+      
+
+
+</div>
+
+{% endblock %}
